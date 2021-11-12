@@ -17,7 +17,8 @@ mongoose.connection
   .on("open", () => console.log("Connected for Bookmark"))
   .on("close", () => console.log("Disconnected fro Bookmark"))
   .on("error", (error) => console.log(error));
-//Schema
+
+  
 const BookmarkSchema = new mongoose.Schema({
     title: String,
     url: String,
