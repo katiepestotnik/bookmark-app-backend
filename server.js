@@ -1,13 +1,10 @@
 require('dotenv').config();
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, MONGODB_URL  } = process.env;
 const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const morgan = require("morgan");
-
-//test database
-const MONGODB_URL = 'mongodb+srv://sei-gia:seirocks@sei.qzqfn.mongodb.net/testBookmark?retryWrites=true&w=majority'; 
 
 mongoose.connect(MONGODB_URL, {
     useUnifiedTopology: true,
@@ -18,7 +15,7 @@ mongoose.connection
   .on("close", () => console.log("Disconnected fro Bookmark"))
   .on("error", (error) => console.log(error));
 
-  
+
 const BookmarkSchema = new mongoose.Schema({
     title: String,
     url: String,
