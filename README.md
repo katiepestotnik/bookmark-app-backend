@@ -12,17 +12,25 @@ List of Dependencies
 This project is configured to connect to a MongoDB database using Mongoose.
 
 ### Bookmark Model
-title: String
-url: String
+Schema  | 
+------------- | 
+title: String  | 
+url: String |
+
 
 ### Route Order:
 URL | HTTP Verb | Action | Notes
 | :---: | :---: | :---: | :---: |
-/bookmark/ | GET | Index | This route shows a list or index of all bookmarks. |
-
-
+/bookmark/ | GET | index | This route shows a list or index of all bookmarks. |
+/bookmark/ | POST | new | a CREATE route. |
+/bookmark/:id | PUT | update | an UPDATE route |
+/bookmark/:id | DELETE | destroy | This routes deletes entries from Database. |
 
 ## Deployment
 Requires the Heroku CLI client. 
 https://bookmark-app-backend.herokuapp.com/bookmark/
+
+### Usage
+[Front-End Git Hub](https://github.com/katiepestotnik/bookmark-app-frontend "Front-End GitHub") and 
+[Live Link](https://blank "Deployed Project")
 
