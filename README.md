@@ -1,5 +1,5 @@
 ## Bookmark Backend
-This project serves as a simple backend designed to work "Bookmark" application . This server receives "Bookmark" entries.
+This project serves as a simple backend designed to work "Bookmark'd" application . This server receives "Bookmark" entries.
 
 List of Dependencies
 * Cors
