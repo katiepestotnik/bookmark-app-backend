@@ -12,7 +12,7 @@ router.get("/", auth, async (req, res) => {
         const {username}= req.payload
       res.status(200).json(await Bookmark.find({username}));
     } catch (error) {
-        res.status(400).json({ error});
+        res.status(400).json({ error:"can't find data"});
     }
   });
 //Create
@@ -33,7 +33,6 @@ router.put("/:id", auth, async (req, res) => {
         const { id } = req.params;
       res.status(200).json(await Bookmark.findByIdAndUpdate(id, req.body, { new: true })
       );
-      res.redirect("https://bookmark-app-ringo.netlify.app/bookmark");
     } catch (error) {
       res.status(400).json(error);
     }
@@ -44,7 +43,6 @@ router.delete("/:id", auth, async (req, res) => {
         const { username } = req.payload;
         const {id}=req.params
       res.status(200).json(await Bookmark.findByIdAndRemove(id));
-      res.redirect("https://bookmark-app-ringo.netlify.app/bookmark")
     } catch (error) {
       res.status(400).json(error);
     }
